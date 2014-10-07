@@ -1,2 +1,13 @@
 duam-porky-model-hb/.classpath
 duam-porky-model-hb/.settings
+.metadata/
+duam-porky-model-hb/.project
+duam-porky-model-hb/target/
+duam-porky-services/.classpath
+duam-porky-services/.project
+duam-porky-services/.settings/
+duam-porky-services/target/
+porky-web/.classpath
+porky-web/.project
+porky-web/.settings/
+porky-web/target/
