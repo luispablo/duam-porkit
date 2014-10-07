@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />        
+        <title>[PageMensajeForm]</title>
+    </head>
+    <body>
+        
+        <wicket:extend>
+            
+            <div class="left_panel">
+                
+                <img src="images/banner_duam.gif"/>
+                
+            </div>
+            
+            <div class="right_panel">
+                
+                <div class="form">
+                    <form wicket:id="form">
+                        <div class="form_title">
+                            <center>
+                                <wicket:message key="sugerencia">[sugerencia]</wicket:message>
+                            </center>
+                        </div>                        
+                        <div class="label">
+                            <wicket:message key="texto">[texto]</wicket:message>
+                        </div>
+                        <textarea wicket:id="texto" id="texto">[texto]</textarea>
+                        <br>
+                        <div class="right">
+                            <input type="submit" class="button" wicket:id="buttonEnviar">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+	        <script>
+	            document.getElementById("texto").focus();
+	        </script>
+        
+        </wicket:extend>
+        
+    </body>
+</html>

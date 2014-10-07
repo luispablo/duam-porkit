@@ -1,0 +1,45 @@
+<wicket:extend>
+            
+	<div class="panel panel-default">
+  		<div class="panel-body">
+			<form wicket:id="form" class="form-inline">
+			    <label>Mes</label>                            
+			    <select class="form-control" wicket:id="mes"/>
+			    <label>A&ntilde;o</label>                            
+			    <select class="form-control" wicket:id="anio"/>
+			    <label>Conceptos para el gr&aacute;fico</label>
+		    	<input type="text" wicket:id="cantidadConceptos" class="form-control" style="width: 80px;"/>
+			    <input type="submit" value="Consultar" class="btn btn-primary" />
+			</form>
+  		</div>
+  	</div>
+
+	<div class="row">
+		<div class="col-md-4">
+		
+			<h3>Detalle por concepto</h3>
+
+			<table class="table table-striped table-bordered table-condensed">
+				<tbody>
+					<tr wicket:id="listViewTotales">
+						<td>
+							<a wicket:id="linkConcepto"><span wicket:id="labelConcepto">[labelConcepto]</span></a>
+						</td>
+						<td><span wicket:id="labelTotal" class="pull-right">[labelTotal]</span></td>
+					</tr>
+				</tbody>
+				<tfoot>
+					<tr>
+						<td><strong>Total</strong></td>
+						<td><strong><span wicket:id="labelTotalEgresos" class="pull-right">[labelTotalEgresos]</span></strong></td>
+					</tr>
+				</tfoot>
+			</table>
+		
+		</div>
+		<div class="col-md-8">
+			<img wicket:id="pieChart" border="0"/>
+		</div>
+	</div>
+
+</wicket:extend>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+        <title>DUAM Porky</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    	<!--[if lt IE 9]>
+      		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    	<![endif]-->
+
+        <script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
+        <script type="text/javascript" src="js/jquery-ui-1.7.1.custom.min.js"></script>
+		<script type="text/javascript" src="js/jquery.hotkeys-0.7.9.min.js"></script>
+		<script type="text/javascript" src="js/ui.datepicker-es.js"></script>
+		<script type="text/javascript" src="js/simple_clock.js"></script>
+		<script type="text/javascript" src="js/popup.js"></script>
+
+        <!-- favicon -->
+        <link rel="shortcut icon" href="images/duam_sistemas.ico" type="image/vnd.microsoft.icon">
+        <link rel="icon" href="images/duam_sistemas.ico" type="image/vnd.microsoft.icon">
+        
+        <style>
+        	div.container
+        	{
+        		margin-top: 60px;
+        	}
+       	</style>
+    </head>
+
+    <body style="background-color: #ededed;">
+
+		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+			<!-- Brand and toggle get grouped for better mobile display -->
+  			<div class="navbar-header">
+  				<a wicket:id="linkHome" class="navbar-brand">DUAM Porky</a>
+  			</div>
+  			<!-- Collect the nav links, forms, and other content for toggling -->
+  			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    			<ul class="nav navbar-nav">
+					<li><a wicket:id="linkMovimientos" id="linkMovimientos"><span class="red">M</span>ovimientos</a></li>
+					<li><a wicket:id="linkAnalisis" id="linkAnalisis"><span class="red">A</span>n&aacute;lisis</a></li>
+					<li><a wicket:id="linkConceptos" id="linkConceptos"><span class="red">C</span>onceptos</a></li>
+					<li><a wicket:id="linkUsuario" id="linkUsuario"><span class="red">P</span>referencias</a></li>
+      			</ul>
+				<p class="navbar-text navbar-right" style="margin-right: 20px;">
+					<a wicket:id="linkLogout" id="linkLogout" class="navbar-link">SA<span class="red">L</span>IR</a>      				
+				</p>
+    		</div>		
+		</nav>
+		        
+		<div class="container">
+        
+			<span wicket:id="feedbackPanel">feedbackPanel</span>
+        
+			<wicket:child/>
+	
+		</div>
+
+	    <script language="JavaScript">
+	    	function clickLink(id)
+	    	{
+		    	location.href = document.getElementById(id).href;
+	    	}
+
+	    	$(document).bind('keydown', 'Ctrl+m', function()
+	    	{
+		    	clickLink("linkMovimientos");
+			});
+			$(document).bind('keydown', 'Ctrl+i', function()
+			{
+				clickLink("linkHome");
+			});
+			$(document).bind('keydown', 'Ctrl+a', function()
+			{
+				clickLink("linkAnalisis");
+			});
+			$(document).bind('keydown', 'Ctrl+c', function()
+			{
+				clickLink("linkConceptos");
+			});
+			$(document).bind('keydown', 'Ctrl+p', function()
+			{
+				clickLink("linkUsuario");
+			});						
+			$(document).bind('keydown', 'Ctrl+l', function()
+			{
+				clickLink("linkLogout");
+			});
+	    </script>
+    
+    </body>
+</html>

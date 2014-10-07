@@ -1,0 +1,32 @@
+<wicket:extend>
+
+	<table class="table table-bordered table-striped">
+		<thead>
+			<tr>
+				<th width="90%" align="left">Nombre</th>
+				<th>
+					<form wicket:id="dummy" style="padding: 0 0 0 0; margin: 0 0 0 0;">
+						<input type="submit" value="Nuevo" wicket:id="agregarButton" class="btn btn-info" />
+					</form>
+				</th>
+			</tr>
+		</thead>
+		<tbody wicket:id="container">
+			<tr wicket:id="filas">
+				<td width="90%"><span wicket:id="nombre">[nombre]</span></td>
+				<td>
+					<a wicket:id="linkEditar" title="editar"><img wicket:id="imageBirome" src="edit.gif" border="0"/></a>
+					<a wicket:id="linkBorrar" title="borrar"><img wicket:id="imageCruz" src="delete.gif" border="0"/></a>
+				</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<td colspan="2" align="center">
+					<span wicket:id="navigator">[navigator]</span>
+				</td>
+			</tr>
+		</tfoot>
+	</table>
+
+</wicket:extend>

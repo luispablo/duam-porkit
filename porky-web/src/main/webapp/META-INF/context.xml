@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Context path="/duam-porky">
+
+    <Resource   auth="Container"
+                description="Conexion a DB"
+                name="jdbc/PorkyDS"
+                type="javax.sql.DataSource"
+                driverClassName="com.mysql.jdbc.Driver"
+                url="jdbc:mysql://localhost:3306/porky"
+                username="porky"
+                password="porky"
+                maxActive="50"
+                maxIdle="1"
+                maxWait="1"/>
+                
+</Context>

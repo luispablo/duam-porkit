@@ -1,0 +1,40 @@
+<wicket:extend>
+
+	<div class="col-md-8 col-md-offset-2">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+	    		<h3 class="panel-title">Concepto</h3>
+	  		</div>
+	  		<div class="panel-body">
+            
+				<form wicket:id="form" class="form-horizontal">
+					<div class="form-group">
+			    		<label for="fecha" class="col-sm-3 control-label">Tipo de concepto</label>
+			    		<div class="col-sm-3">
+			    			<select wicket:id="tipoConcepto" class="form-control"/>
+			    		</div>
+			  		</div>
+					<div class="form-group">
+			    		<label for="fecha" class="col-sm-3 control-label">Nombre</label>
+			    		<div class="col-sm-5">
+			    			<input class="form-control" type="text" onfocus="javascript: this.select();" wicket:id="nombre" maxlength="50"/>
+			    		</div>
+			  		</div>
+					<div class="form-group">
+			    		<label for="fecha" class="col-sm-3 control-label">Valor por defecto</label>
+			    		<div class="col-sm-2">
+			    			<input class="form-control" type="text" onfocus="javascript: this.select();" wicket:id="valorPorDefecto" maxlength="50"/>
+			    		</div>
+			  		</div>
+			  		<div class="form-group">
+			    		<div class="col-sm-offset-2 col-sm-10">
+							<input type="submit" value="Grabar" id="save" class="btn btn-primary" wicket:id="save"/>
+			    		</div>
+			  		</div>	                	
+				</form>
+			
+			</div>
+		</div>
+	</div>
+            
+</wicket:extend>

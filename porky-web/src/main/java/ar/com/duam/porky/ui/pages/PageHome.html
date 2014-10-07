@@ -1,0 +1,47 @@
+<wicket:extend>
+
+	<div class="panel panel-default">
+  		<div class="panel-body">
+			<form wicket:id="form" role="form" class="form-inline">
+				<span wicket:id="params">
+					<select class="form-control" wicket:id="month"/>
+					de
+					<select class="form-control" wicket:id="year"/>
+					TOP
+					<input type="text" wicket:id="top" class="form-control" style="width: 40px;"/>
+					evoluci&oacute;n
+					<input type="text" wicket:id="evolutionMonths" class="form-control" style="width: 40px;"/>
+					Saldo
+					<input type="text" wicket:id="saldo" class="form-control" readonly="readonly" style="width: 90px;"/>					
+					<input type="submit" id="update" wicket:id="update" value="Actualizar" class="btn btn-info"/>
+					<input type="submit" wicket:id="add" id="addButton" value="Nuevo movimiento" class="btn btn-primary pull-right"/>
+				</span>
+			</form>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div wicket:id="incomeOutcome" class="col-md-4">
+			<img wicket:id="image" class="center-block"/>
+		</div>
+		<div wicket:id="incomeTops" class="col-md-4">
+			<img wicket:id="image" class="center-block"/>
+		</div>
+		<div wicket:id="outcomeTops" class="col-md-4">
+			<img wicket:id="image" class="center-block"/>
+		</div>
+	</div>
+	<div class="row">
+		&nbsp;
+	</div>
+	<div class="row">
+		<div wicket:id="evolution">
+			<img wicket:id="image" class="center-block"/>
+		</div>
+	</div>
+			
+    <script language="JavaScript">
+    	document.getElementById("addButton").focus();
+    </script>
+
+</wicket:extend>

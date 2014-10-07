@@ -1,0 +1,57 @@
+<wicket:extend>
+
+	<div class="row">
+		<div class="col-md-2">
+		
+                    <img wicket:id="imagen"/>
+
+               		<wicket:message key="informacionPeriodo">informacionPeriodo</wicket:message><br/>
+
+                    <wicket:message key="saldo">[saldo]</wicket:message>:&nbsp;
+
+                    <span wicket:id="saldo" class="saldo">[saldo]</span>
+		
+		</div>
+		<div class="col-md-10">
+
+			<div class="panel panel-default">
+  				<div class="panel-body">
+                    <span wicket:id="panelFiltroMovimiento">[panelFiltroMovimiento]</span>
+				</div>
+			</div>
+
+			<table class="table table-bordered table-striped">
+				<thead>
+					<tr>
+						<th width="17%" align="center"><a wicket:id="linkFecha">fecha</a></th>
+						<th width="30%" align="left"><strong>concepto</strong></th>
+						<th width="35%" align="left"><a wicket:id="linkDetalle">detalle</a></th>
+						<th align="center"><a wicket:id="linkImporte">importe</a></th>
+						<th><a wicket:id="nuevo" class="btn btn-primary">Nuevo</a></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr wicket:id="listViewMovimientos">
+						<td width="17%" class="fecha"><span wicket:id="fecha">[fecha]</span></td>
+						<td width="30%"><span wicket:id="concepto">[concepto]</span></td>
+						<td width="35%"><span wicket:id="detalle">[detalle]</span></td>
+						<td style="padding-right: 5px" class="numero"><span wicket:id="importe">[importe]</span></td>
+						<td>
+							<a wicket:id="linkEditar" title="editar"><img wicket:id="imageBirome" src="edit.gif" border="0"/></a>
+							<a wicket:id="linkBorrar" title="borrar"><img wicket:id="imageCruz" src="delete.gif" border="0"/></a>
+						</td>
+					</tr>
+				</tbody>
+				<tfoot>
+					<tr>
+						<td colspan="5">
+                    		<span wicket:id="navigator">[navigator]</span>
+                    	</td>
+                    </tr>
+				</tfoot>
+			</table>
+			
+		</div>
+	</div>
+
+</wicket:extend>

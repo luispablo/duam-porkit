@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  - Middle tier application context definition for the image database.
+  -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:context="http://www.springframework.org/schema/context"
+		xmlns:tx="http://www.springframework.org/schema/tx"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+				http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
+				http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/porky"/>
+        <property name="username" value="porky"/>
+        <property name="password" value="porky"/>
+    </bean>
+
+    <bean id="vendorAdapter" class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+        <property name="showSql" value="false"/>
+        <property name="generateDdl" value="false" />
+    </bean>
+
+    <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="jpaVendorAdapter" ref="vendorAdapter"/>
+        <property name="jpaProperties">
+            <props>
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+                <prop key="hibernate.hbm2ddl.auto">update</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="entityManagerFactory" ref="entityManagerFactory" />
+    </bean>
+
+    <bean id="transactionInterceptor" class="org.springframework.transaction.interceptor.TransactionInterceptor">
+        <property name="transactionManager" ref="transactionManager" />
+        <property name="transactionAttributeSource">
+            <bean class="org.springframework.transaction.annotation.AnnotationTransactionAttributeSource" />
+        </property>
+    </bean>
+
+    <!-- Service -->
+    <bean id="dataProviderTarget" class="ar.com.duam.dao.impl.DataProviderJPA">
+        <property name="entityManagerFactory" ref="entityManagerFactory" />
+    </bean>
+    <bean id="dataProvider" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="proxyInterfaces">
+            <value>ar.com.duam.dao.DataProvider</value>
+        </property>
+        <property name="interceptorNames">
+            <list>
+                <idref local="transactionInterceptor" />
+                <idref local="dataProviderTarget" />
+            </list>
+        </property>
+    </bean>
+ 
+    <bean id="persistenceManagerTarget" class="ar.com.duam.porky.services.impl.PorkyManagerJPA">
+        <property name="entityManagerFactory" ref="entityManagerFactory" />
+    </bean>
+    <bean id="porkyManager" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="proxyInterfaces">
+            <value>ar.com.duam.porky.services.PorkyManager</value>
+        </property>
+        <property name="interceptorNames">
+            <list>
+                <idref local="transactionInterceptor" />
+                <idref local="persistenceManagerTarget" />
+            </list>
+        </property>
+    </bean>
+
+    <bean name="postman" class="ar.com.duam.porky.services.Postman">
+    	<property name="host" value="smtp.gmail.com" />
+    	<property name="userName" value="system@duamsistemas.com.ar" />
+    	<property name="password" value="system" />
+    	<property name="fromAddress" value="system@duamsistemas.com.ar" />
+    	<property name="fromName" value="DUAM Porky" />
+		<property name="tls" value="true" />
+		<property name="smtpPort" value="465" />
+    </bean>
+
+    <bean name="RRPP" class="ar.com.duam.porky.services.RRPP">
+        <property name="postman" ref="postman" />
+    </bean>
+
+</beans>
