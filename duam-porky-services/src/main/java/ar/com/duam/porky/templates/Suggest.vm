@@ -1,0 +1,176 @@
+<html xmlns=http://www.w3.org/1999/xhtml>
+    <head>
+        <title>DUAM Porky</title>
+    </head>
+    <body topmargin=0>
+        <style>
+            body {
+                background-color: #fff;
+            }
+            
+            .floatFix:after {
+                content: ".";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+             /* parametro para mozilla y opera */
+            a {
+                color: #026096;
+                text-decoration: none;
+            }
+            
+            a:visited {
+                color: #026096;
+            }
+            
+            a:hover {
+                color: #026096;
+                text-decoration: underline;
+            }
+            
+            .fecha {
+                text-align: right;
+                font: normal 11px "arial";
+                color: #585858;
+                margin-bottom: 10px;
+            }
+            
+            .contenedorRtte {
+                border: 1px solid #CBE2F0;
+                font: normal 13px "arial";
+                padding: 12px;
+                color: #3c3c3c;
+            }
+            
+            .volanta {
+                font: normal 12px / 16px "Arial";
+                margin: 25px 0 8px 0;
+                color: #818181;
+            }
+            
+            .titulo {
+                font: normal 20px / 20px "Arial";
+                padding: 25px 0 8px 0;
+            }
+            
+            .bajada {
+                font: normal 14px / 19px "Arial";
+            }
+            
+            .contenedorLink {
+                border: 1px dashed #CCCCCC;
+                font: normal 12px "arial";
+                color: #3c3c3c;
+                padding: 12px;
+                margin: 15px 0;
+                background-color: #FAFAFA;
+            }
+            
+            .contenedorColumnas {
+                border-top: 1px dashed #ccc;
+                font: normal 11px / 20px "arial";
+                padding-top: 15px;
+            }
+            
+            .legales {
+                width: 560px;
+                background-color: #f5f5f5;
+                margin-top: 5px;
+                font: normal 11px / 14px "arial";
+                color: #555;
+                padding: 12px;
+            }
+            
+            .espacio10 {
+                height: 10px;
+                line-height: 10px;
+            }
+            
+            .espacio3 {
+                height: 3px;
+                line-height: 3px;
+            }
+        </style>
+        <table border=0 cellpadding=0 cellspacing=0>
+            <tr>
+                <td width=576 colspan=2 height=6>
+                    <spacer type=block width=1 height=1>
+                </td>
+            </tr>
+            <tr>
+                <td class=contenedorRtte>
+                </td>
+            </tr>
+        </table>
+        <br>
+        <table border=0 width=576 cellpadding=0 cellspacing=0>
+            <tr>
+                <td>
+                    <div class=espacio3>
+                    </div>
+                    <span class=titulo>
+                    	¡Toma el control de tu dinero con <a href="http://duam-porky.sytes.net">DUAM Porky</a>!
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td width=576>
+                    <div class=espacio10>
+                    </div>
+                    <span class=bajada>
+                    	<p>
+		                	<b>${from}</b> (<A href=mailto:${fromMail}>${fromMail}</A>)
+							a empezado a utilizar el sistema <a href="http://duam-porky.sytes.net">DUAM Porky</a>
+							 para controlar	sus finanzas personales, ¡y le está gustando!
+                    	</p>
+						<p>
+							Quiere recomendártelo a vos.
+						</p>
+						${comments}
+						<p>
+							Así que te invitamos a visitarnos en 
+							<a href="http://duam-porky.sytes.net">http://duam-porky.sytes.net</a>
+							y empezar a tomar el control de tu dinero. 
+						</p>
+                        <br>
+                        <br>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class=contenedorLink>
+                    No dejes de visitarnos en <a href=http://duam-porky.sytes.net>http://duam-porky.sytes.net</a>
+                </td>
+            </tr>
+            <tr>
+                <td width=576>
+            </tr>
+        </table>
+        <table border=0 cellpadding=0 cellspacing=0>
+            <tr>
+                <td valign=top align=left width=576>
+                    <font face=arial>
+                        <font face=ms sans serif size=1  color=666666>
+                            <br>
+                            <br>
+                            Si desea acceder a más información acerca de los autores de este sistema 
+							o contenidos relacionados ingrese en : <a href=http://www.duamsistemas.com.ar>http://www.duamsistemas.com.ar</a>
+                        </font>
+                    </font>
+                    <br>
+                    <br>
+                </td>
+            </tr>
+        </table>
+        <table border=0 cellpadding=0 cellspacing=0>
+            <tr>
+                <td class=legales>
+                    Copyright DUAM Sistemas 2010. Todos los derechos reservados.
+                </td>
+            </tr>
+        </table>
+        <img width=1 height=1 border=0 src=http://estadisticas.lanacion.com.ar/diario/default.gif?pagina=mailAE&origen=AEHtml&otros=nota_id:>
+    </body>
+</html>
