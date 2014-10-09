@@ -7,7 +7,7 @@
         <properties>
             <property name="hibernate.archive.autodetection" value="class, hbm"/>
 			<property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
-            <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/porky"/>
+            <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/porky?autoReconnect=true&useUnicode=true&characterEncoding=utf8"/>
             <property name="hibernate.connection.username" value="porky"/>
             <property name="hibernate.connection.password" value="porky"/>         	
          	<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>            
